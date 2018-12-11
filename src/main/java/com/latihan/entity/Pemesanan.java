@@ -23,7 +23,7 @@ public class Pemesanan {
     @GeneratedValue(generator = "uuid_gen")
     @Column(name = "id_pemesanan", nullable = false, length = 64)
     private String id;
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "id_konsumen", nullable = false)
     private Konsumen konsumen;
     @Column(name = "tanggal_pesan", nullable = false)
@@ -32,10 +32,10 @@ public class Pemesanan {
     private boolean statusBayar;
     @Column(name = "total_bayar")
     private BigDecimal totalBayar;
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "id_pengirim", nullable = false)
     private Pengirim pengirim;
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "id_pembayaran", nullable = false)
     private Pembayaran pembayaran;
 //    @OneToMany(mappedBy = "pemesanan")

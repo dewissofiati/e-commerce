@@ -38,7 +38,7 @@ public class PemesananApi {
     }
 
     @DeleteMapping("/delete")
-    public ResponseEntity<?> delete(@RequestParam("id_kategori") String id){
+    public ResponseEntity<?> delete(@RequestParam("id_pemesanan") String id){
         service.delete(id);
         return ResponseEntity.ok().build();
     }
