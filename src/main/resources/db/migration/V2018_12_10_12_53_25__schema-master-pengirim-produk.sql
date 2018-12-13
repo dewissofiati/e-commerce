@@ -1,16 +1,18 @@
 CREATE TABLE pengirim(
   id_pengirim       character varying(64)     NOT NULL    PRIMARY KEY,
   nama_pengirim     character varying(100)    NOT NULL,
-  no_hp             character varying(64)     NOT NULL
+  no_hp             character varying(64)     NOT NULL,
+  ongkos_kirim      int                       NOT NULL,
+  lama_pengiriman   character varying(64)     NOT NULL
 );
 
 CREATE TABLE produk(
   id_produk        character varying(64)       NOT NULL     PRIMARY KEY,
-nama             character varying(100)      NOT NULL,
-harga            INT                         NOT NULL,
-kuantiti         INT,
-id_kategori      character varying(64)       NOT NULL,
-id_toko          character varying(64)       NOT NULL
+  nama             character varying(100)      NOT NULL,
+  harga            INT                         NOT NULL,
+  kuantiti         INT,
+  id_kategori      character varying(64)       NOT NULL,
+  id_toko          character varying(64)       NOT NULL
 );
 
 ALTER TABLE produk

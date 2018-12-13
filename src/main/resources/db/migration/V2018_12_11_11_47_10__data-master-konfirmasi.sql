@@ -1,3 +1,3 @@
-INSERT INTO konfirmasi(id_konfirmasi,id_pemesanan,id_konsumen,total_tagihan,id_pembayaran,no_rekening,rekening_atas_nama,tanggal_transfer,status_pembayaran)
+INSERT INTO konfirmasi(id_konfirmasi, id_konsumen, id_detail_pemesanan,total,id_pembayaran,atas_nama,tanggal_bayar,status_pembayaran)
 VALUES
-('001','001','001',200000,'001','0264787878','Dewi Syarah','2018-12-03',true);
+('001','001','001',211000,'001','Dewi Syarah','2018-12-03',true);
