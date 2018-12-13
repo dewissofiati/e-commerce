@@ -18,13 +18,13 @@ import java.util.Optional;
 @Transactional(readOnly = true)
 public class PemesananService {
 
-    @Autowired
-    private ProdukRepository produkRepository;
+//    @Autowired
+//    private ProdukRepository produkRepository;
 
     @Autowired
     private PemesananRepository pemesananRepository;
-    @Autowired
-    private DetailPemesananRepository detailPemesananRepository;
+//    @Autowired
+//    private DetailPemesananRepository detailPemesananRepository;
 
     @Transactional
     public Pemesanan save(Pemesanan p){

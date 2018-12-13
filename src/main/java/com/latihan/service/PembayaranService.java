@@ -27,7 +27,7 @@ public class PembayaranService {
         repository.deleteById(id);
     }
 
-    public Iterable<Pembayaran> findAll(){
+    public Iterable<Pembayaran> list(){
         return repository.findAll();
     }
 
