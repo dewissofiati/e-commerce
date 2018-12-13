@@ -8,6 +8,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
 import java.util.Optional;
 
 @RestController
@@ -35,8 +36,9 @@ public class PembayaranApi {
     public ResponseEntity<Pembayaran> save(
             @RequestParam String id,
             @RequestParam String nama,
+            @RequestParam BigDecimal biaya,
             @RequestParam String deskripsi){
-        Pembayaran pembayaran = service.save(new Pembayaran(id, nama, deskripsi));
+        Pembayaran pembayaran = service.save(new Pembayaran(id, nama, biaya, deskripsi));
         return ResponseEntity.ok(pembayaran);
     }
 
@@ -47,7 +49,7 @@ public class PembayaranApi {
     }
 
     @DeleteMapping("/delete")
-    public ResponseEntity<?> delete(@RequestParam("id_konsumen") String id){
+    public ResponseEntity<?> delete(@RequestParam("id_pembayaran") String id){
         service.delete(id);
         return ResponseEntity.ok().build();
     }

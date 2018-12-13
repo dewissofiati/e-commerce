@@ -8,6 +8,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
 import java.util.Optional;
 
 @RestController
@@ -35,8 +36,10 @@ public class PengirimApi {
     public ResponseEntity<Pengirim> save(
             @RequestParam(required = false) String id,
             @RequestParam String nama,
-            @RequestParam String noHp) {
-        Pengirim pengirim = service.save(new Pengirim(id, nama, noHp));
+            @RequestParam String noHp,
+            @RequestParam BigDecimal ongkir,
+            @RequestParam String waktuKirim) {
+        Pengirim pengirim = service.save(new Pengirim(id, nama, noHp, ongkir, waktuKirim));
         return ResponseEntity.ok(pengirim);
     }
 

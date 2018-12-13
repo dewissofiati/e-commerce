@@ -40,7 +40,7 @@ public class ProdukApi {
     }
 
     @DeleteMapping("/delete")
-    public ResponseEntity<?> delete(@RequestParam("id_toko") String id){
+    public ResponseEntity<?> delete(@RequestParam("id_produk") String id){
         service.delete(id);
         return ResponseEntity.ok().build();
     }
