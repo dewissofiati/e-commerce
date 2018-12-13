@@ -8,6 +8,7 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Date;
+import java.time.LocalDate;
 
 @Data
 @AllArgsConstructor
@@ -22,23 +23,20 @@ public class Konfirmasi {
     @Column(name = "id_konfirmasi", nullable = false, length = 64)
     private String id;
     @OneToOne
-    @JoinColumn(name = "id_pemesanan", nullable = false)
-    private Pemesanan pemesanan;
-    @OneToOne
     @JoinColumn(name = "id_konsumen", nullable = false)
     private Konsumen konsumen;
-    @Column(name = "total_tagihan")
-    private BigDecimal totalTagihan;
+    @OneToOne
+    @JoinColumn(name = "id_detail_pembayaran")
+    private DetailPemesanan detailPemesanan;
+    @Column(name = "total")
+    private BigDecimal total;
     @OneToOne
     @JoinColumn(name = "id_pembayaran")
     private Pembayaran pembayaran;
-    @Column(name = "no_rekening")
-    private String noRekening;
-    @Column(name = "rekening_atas_nama")
-    private String rekeningAtasNama;
-    @Column(name = "tanggal_transfer")
-    private Date tglTransfer;
+    @Column(name = "atas_nama")
+    private String atasNama;
+    @Column(name = "tanggal_bayar")
+    private LocalDate tglBayar;
     @Column(name = "status_pembayaran")
     private boolean statusBayar;
-
 }

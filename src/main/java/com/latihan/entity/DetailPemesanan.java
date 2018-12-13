@@ -20,17 +20,29 @@ public class DetailPemesanan {
     @GeneratedValue(generator = "uuid_gen")
     @Column(name = "id_detail_pemesanan")
     private String id;
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "id_pemesanan", nullable = false)
     private Pemesanan pemesanan;
     @ManyToOne
     @JoinColumn(name = "id_produk", nullable = false)
     private Produk produk;
-    @Column(name = "kuantiti", nullable = false)
-    private Integer kuantiti;
+    @ManyToOne
+    @JoinColumn(name = "id_toko", nullable = false)
+    private Toko toko;
+    @Column(name = "jumlah", nullable = false)
+    private Integer jumlah;
     @Column(name = "harga", nullable = false)
     private BigDecimal harga;
+    @Column(name = "ongkir", nullable = false)
+    private BigDecimal ongkir;
+    @ManyToOne
+    @JoinColumn(name = "id_pengirim", nullable = false)
+    private Pengirim pengirim;
+    @ManyToOne
+    @JoinColumn(name = "id_pembayaran", nullable = false)
+    private Pembayaran pembayaran;
     @Column(name = "total", nullable = false)
     private BigDecimal total;
-
+    @Column(name = "status_pembayaran", nullable = false)
+    private Boolean status;
 }

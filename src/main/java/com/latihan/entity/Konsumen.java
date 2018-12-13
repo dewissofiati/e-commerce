@@ -25,11 +25,11 @@ public class Konsumen {
     private String alamat;
     @Column(name = "kode_pos", nullable = false)
     private String kodePos;
-    @Column(name = "kota")
+    @Column(name = "kota", nullable = false)
     private String kota;
-    @Column(name = "no_hp")
+    @Column(name = "no_hp", nullable = false)
     private String noHp;
-    @Column(name = "email")
+    @Column(name = "email", nullable = false)
     private String email;
 
 }

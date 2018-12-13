@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Data
 @AllArgsConstructor
@@ -21,6 +22,8 @@ public class Pembayaran {
     private String id;
     @Column(name = "metode_pembayaran", nullable = false)
     private String metodePembayaran;
+    @Column(name = "biaya_penanganan", nullable = false)
+    private BigDecimal biaya;
     @Column(name = "deskripsi", nullable = false)
     private String deskripsi;
 }

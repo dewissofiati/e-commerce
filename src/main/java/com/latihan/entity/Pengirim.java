@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Data
 @AllArgsConstructor
@@ -23,4 +24,8 @@ public class Pengirim {
     private String nama;
     @Column(name = "no_hp", nullable = false)
     private String noHp;
+    @Column(name = "ongkos_kirim")
+    private BigDecimal ongkir;
+    @Column(name = "lama_pengiriman")
+    private String waktuKirim;
 }

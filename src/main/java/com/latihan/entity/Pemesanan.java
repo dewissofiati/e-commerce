@@ -7,9 +7,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.sql.Date;
-import java.util.ArrayList;
-import java.util.List;
+import java.time.LocalDate;
 
 @Data
 @AllArgsConstructor
@@ -26,18 +24,19 @@ public class Pemesanan {
     @OneToOne
     @JoinColumn(name = "id_konsumen", nullable = false)
     private Konsumen konsumen;
-    @Column(name = "tanggal_pesan", nullable = false)
-    private Date tglPesan;
-    @Column(name = "status_pembayaran")
-    private boolean statusBayar;
-    @Column(name = "total_bayar")
-    private BigDecimal totalBayar;
-    @OneToOne
-    @JoinColumn(name = "id_pengirim", nullable = false)
-    private Pengirim pengirim;
-    @OneToOne
-    @JoinColumn(name = "id_pembayaran", nullable = false)
-    private Pembayaran pembayaran;
+    @ManyToOne
+    @JoinColumn(name = "id_produk", nullable = false)
+    private Produk produk;
+    @ManyToOne
+    @JoinColumn(name = "id_toko", nullable = false)
+    private Toko toko;
+    @Column(name = "jumlah", nullable = false)
+    private Integer jumlah;
+    @Column(name = "harga", nullable = false)
+    private BigDecimal harga;
+    @Column(name = "total")
+    private BigDecimal total;
+
 //    @OneToMany(mappedBy = "pemesanan")
 //    private List<DetailPemesanan> details = new ArrayList<>();
 }
